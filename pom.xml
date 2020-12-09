@@ -27,11 +27,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.clearminds.cmh</groupId>
-			<artifactId>middleware</artifactId>
-			<version>1.0.0</version>		
-		</dependency>
 	</dependencies>
 
 	<build>
