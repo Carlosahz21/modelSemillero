@@ -1,19 +1,49 @@
 package com.clearminds.cmh.dtos;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Estudiante {
+	
+	
+	
 	private int id;
 	private String nombre;
 	private String apellido;
+	private int edad;
+	private static String fecha;
+	
+	private static String formato = "yyyy/MM/dd HH:mm:ss";
 	
 
 	public Estudiante() {
 	}
 
-	public Estudiante(int id, String nombre, String apellido) {
+	public Estudiante(int id, String nombre, String apellido, int edad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.edad = edad;
+		
+		SimpleDateFormat formateador = new SimpleDateFormat(formato);
+		this.fecha = formateador.format(new Date());
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 
 	public Estudiante(String nombre, String apellido) {
