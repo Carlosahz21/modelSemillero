@@ -11,7 +11,7 @@ public class Estudiante {
 	private String nombre;
 	private String apellido;
 	private int edad;
-	private static String fecha;
+	private String fecha;
 	
 	private static String formato = "yyyy/MM/dd HH:mm:ss";
 	
@@ -25,17 +25,14 @@ public class Estudiante {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
-		
 		SimpleDateFormat formateador = new SimpleDateFormat(formato);
 		this.fecha = formateador.format(new Date());
 	}
 
 	public String getFecha() {
+		SimpleDateFormat formateador = new SimpleDateFormat(formato);
+		this.fecha = formateador.format(new Date());
 		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
 	}
 	
 	public int getEdad() {
@@ -76,6 +73,7 @@ public class Estudiante {
 		this.apellido = apellido;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + "]";
